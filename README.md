@@ -2,7 +2,11 @@
 ### N+1問題とは
 大量のSQLが発行されてしまい、パフォーマンスが低下してしまうこと
 
+### テーブル構成
+![ER](https://github.com/shuhei-icb/N1-problem_test/assets/82928805/0e62b0df-8b06-42bb-8b74-261331f2918c)
+
 ### 実例
+
 対策なし
 ```
 Department Load (28.6ms)  SELECT `departments`.* FROM `departments`
