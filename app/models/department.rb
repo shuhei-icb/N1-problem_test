@@ -5,7 +5,7 @@ class Department < ApplicationRecord
     all_departments = self.all
     all_departments.each do | department |
       department.employees.each do | employee |
-        puts employee.name
+        puts "#{employee.department.name} | #{employee.name}"
       end
     end
   end
@@ -13,7 +13,7 @@ class Department < ApplicationRecord
   def self.use_eager_load
     all_employees = Employee.eager_load(:department)
     all_employees.each do | employee |
-      puts employee.name
+      puts "#{employee.department.name} | #{employee.name}"
     end
   end
 
