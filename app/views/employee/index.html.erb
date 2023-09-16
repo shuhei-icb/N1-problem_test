@@ -1,2 +1,33 @@
-<h1>Employee#index</h1>
-<p>Find me in app/views/employee/index.html.erb</p>
+<h3>N＋1対策あり</h3>
+<h1>従業員一覧</h1>
+<table>
+  <tr>
+    <th>部署</th>
+    <th>従業員名</th>
+  </tr>
+  <% @all_departments.each do |department| %>
+    <% department.employees.each do |employee| %>
+      <tr>
+        <td><%= department.name %></td>
+        <td><%= employee.name %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<style>
+  h3 {
+    font-weight: bold;
+    text-align: center;
+    color: tomato;
+  }
+  h1 {
+    text-align: center;
+  }
+  table {
+    margin: auto;
+  }
+  th {
+    text-align: left;
+  }
+</style>
