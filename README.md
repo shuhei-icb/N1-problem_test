@@ -1,4 +1,4 @@
-# N+1問題の検証
+# N+1問題の検証とbulletでアラート表示
 ## N+1問題とは
 大量のSQLが発行されてしまい、パフォーマンスが低下してしまうこと
 
@@ -98,7 +98,13 @@ Employee Load (3.5ms)  SELECT `employees`.* FROM `employees` WHERE `employees`.`
 
 * 実例1の対策なし -> Department.cause_problem
 * 実例1の対策あり -> Department.use_eager_load
-* 実例２の対策なし -> Employee.cause_problem
-* 実例２の対策あり -> Employee.use_preload
+* 実例2の対策なし -> Employee.cause_problem
+* 実例2の対策あり -> Employee.use_preload
+
+##bulletでアラート表示  
+gem「bullet」を使用してN＋1問題をアラート表示してみる  
+N＋1問題が発生するコードを記述し、ブラウザでアクセスする  
+
+
 
 
